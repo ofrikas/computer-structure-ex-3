@@ -6,13 +6,13 @@ This project was completed during our second year in the Computer Science degree
 2. Optimization (optimization folder)
 3. Patching (patch folder)
 
-
-1. Cache Simulation
 -------------------
+1. Cache Simulation
 In this part of the assignment, we simulate how a cache operates. The goal is to define two structs to represent cache sets and the cache itself. These are fundamental to understanding cache behavior and efficiency.
 
-2. Optimization
+
 ---------------
+2. Optimization
 This section tackles the problem of finding a minimal Vertex Cover, which is known to be NP-Hard. Given a graph G = (V, E) presented as an adjacency matrix A ∈ {0, 1}^{|V| × |V|}, the task is to determine the minimal number of vertices needed to touch every edge in the graph.
 
 You will find an unoptimized implementation in vertex-cover.c, which includes:
@@ -20,8 +20,9 @@ You will find an unoptimized implementation in vertex-cover.c, which includes:
 - generateCombinations: Recursively generates possible combinations of covers.
 - findMinVertexCover: Main function that prints the minimum set cover.
 
-3. Patching
+
 -----------
+3. Patching
 For this section, we were given a binary file named patchwork. The task was to patch this binary to make it print a secret flag. We used reverse engineering tools, specifically Cutter, to accomplish this.
 
 Steps Taken:
@@ -34,8 +35,9 @@ Steps Taken:
 
 The detailed steps and reasoning are documented in the file cheating_is_bad.txt.
 
-Conclusion
+
 ----------
+Conclusion
 This project showcases our skills in cache simulation, optimization problems, and binary patching. Each section builds on the principles and techniques learned throughout the course.
 
 the full assiment is on the pdf 

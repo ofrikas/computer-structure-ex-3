@@ -1,4 +1,4 @@
-Assignment - Second Year Computer Science
+Assignment - home work 3 in computer structure
 
 This project was completed during our second year in the Computer Science degree program. The assignment consists of three main parts:
 

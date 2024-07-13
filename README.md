@@ -6,6 +6,7 @@ This project was completed during our second year in the Computer Science degree
 2. Optimization (optimization folder)
 3. Patching (patch folder)
 
+
 1. Cache Simulation
 -------------------
 In this part of the assignment, we simulate how a cache operates. The goal is to define two structs to represent cache sets and the cache itself. These are fundamental to understanding cache behavior and efficiency.

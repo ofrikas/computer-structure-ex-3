@@ -8,11 +8,13 @@ This project was completed during our second year in the Computer Science degree
 
 -------------------
 1. Cache Simulation
+
 In this part of the assignment, we simulate how a cache operates. The goal is to define two structs to represent cache sets and the cache itself. These are fundamental to understanding cache behavior and efficiency.
 
 
 ---------------
 2. Optimization
+
 This section tackles the problem of finding a minimal Vertex Cover, which is known to be NP-Hard. Given a graph G = (V, E) presented as an adjacency matrix A ∈ {0, 1}^{|V| × |V|}, the task is to determine the minimal number of vertices needed to touch every edge in the graph.
 
 You will find an unoptimized implementation in vertex-cover.c, which includes:
@@ -23,18 +25,10 @@ You will find an unoptimized implementation in vertex-cover.c, which includes:
 
 -----------
 3. Patching
+
 For this section, we were given a binary file named patchwork. The task was to patch this binary to make it print a secret flag. We used reverse engineering tools, specifically Cutter, to accomplish this.
 
-Steps Taken:
-- Tool Selection: Used Cutter for reverse engineering.
-- Initial Analysis: Loaded the binary into Cutter and performed an initial analysis.
-- Locating the Flag Check: Identified the code section responsible for the flag check.
-- Understanding the Condition: Found a conditional jump instruction critical to the control flow.
-- Binary Patching: Modified the value moved into the register checked by the jump condition, ensuring the program would print the flag.
-- Testing the Patch: Saved and executed the patched binary to verify the correct output.
-
 The detailed steps and reasoning are documented in the file cheating_is_bad.txt.
-
 
 ----------
 Conclusion

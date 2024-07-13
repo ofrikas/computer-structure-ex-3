@@ -1,6 +1,6 @@
 /* 
     Ofri Kastenbaum 208708768
-    Orel Shai 
+    Orel Shai 206586109
 */
 
 #include <stdio.h>
@@ -98,7 +98,6 @@ void write_byte(cache_t cache, uchar* start, long int off, uchar new) {
 
     // searching for the line in the set to write to or to overwrite
     int line_index = 0;
-    int min_freq_line = 0;
     uchar min_freq = cache.cache[set_index][0].frequency;
     for (int i = 0; i < cache.E; i++) {
         // if the line is already in the cache overwrite it. We can say read_byte should have been called before write_byte
@@ -114,7 +113,7 @@ void write_byte(cache_t cache, uchar* start, long int off, uchar new) {
         // if the line is valid and the frequency is lower than the minimum frequency
         if (cache.cache[set_index][i].frequency < min_freq) {
             min_freq = cache.cache[set_index][i].frequency;
-            min_freq_line = i;
+            line_index = i;
         }
     }
 

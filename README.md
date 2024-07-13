@@ -38,6 +38,7 @@ The detailed steps and reasoning are documented in the file cheating_is_bad.txt.
 
 ----------
 Conclusion
+
 This project showcases our skills in cache simulation, optimization problems, and binary patching. Each section builds on the principles and techniques learned throughout the course.
 
 the full assiment is on the pdf 

@@ -121,7 +121,7 @@ void write_byte(cache_t cache, uchar* start, long int off, uchar new) {
     cache.cache[set_index][line_index].valid = 1;
     cache.cache[set_index][line_index].tag = tag;
     cache.cache[set_index][line_index].block[block_offset] = new;
-    update_frequency(&cache, set_index, line_index);
+    cache.cache[set_index][line_index].frequency = 1;
     start[off] = new; // Write to "RAM" memory
 }
 

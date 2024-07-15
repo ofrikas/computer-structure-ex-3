@@ -1,6 +1,12 @@
+/* 
+    Ofri Kastenbaum 208708768
+    Orel Shai 206586109
+*/
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 
 #define MAX_VERTICES 100
 typedef unsigned char uchar;

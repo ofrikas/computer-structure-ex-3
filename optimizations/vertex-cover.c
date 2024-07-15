@@ -3,18 +3,20 @@
 #include <stdlib.h>
 
 #define MAX_VERTICES 100
+typedef unsigned char uchar;
 
 bool isVertexCover(int graph[MAX_VERTICES * MAX_VERTICES], int n, int cover[], int k) {
-    bool edges_covered[MAX_VERTICES * MAX_VERTICES] = {false};
+    uchar edges_covered[MAX_VERTICES * MAX_VERTICES] = {0};
 
     int* endCover = &cover[k];
     while (cover < endCover)
     {
         int v = *cover++;
+        int vMax_Vertices = v * MAX_VERTICES;
         for (int j = 0; j < n; j++) {
-            if (graph[v * MAX_VERTICES + j]) {
-                edges_covered[v * MAX_VERTICES+ j] = true;
-                edges_covered[j * MAX_VERTICES + v] = true;
+            if (graph[vMax_Vertices + j]) {
+                edges_covered[vMax_Vertices+ j] = 1;
+                edges_covered[j * MAX_VERTICES + v] = 1;
             }
         }
     }
@@ -28,7 +30,7 @@ bool isVertexCover(int graph[MAX_VERTICES * MAX_VERTICES], int n, int cover[], i
         i++;
         int* endgraph = &graph[startrow + n];
         int* graphLoc = &graph[startrow + i];
-        bool* edgesLoc = &edges_covered[startrow + i];
+        uchar* edgesLoc = &edges_covered[startrow + i];
         while (graphLoc <= endgraph)
         {
             if (*graphLoc && !*edgesLoc) {

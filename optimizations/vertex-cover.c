@@ -7,8 +7,10 @@
 bool isVertexCover(int graph[MAX_VERTICES * MAX_VERTICES], int n, int cover[], int k) {
     bool edges_covered[MAX_VERTICES * MAX_VERTICES] = {false};
 
-    for (int i = 0; i < k; i++) {
-        int v = cover[i];
+    int* endCover = &cover[k];
+    while (cover < endCover)
+    {
+        int v = *cover++;
         for (int j = 0; j < n; j++) {
             if (graph[v * MAX_VERTICES + j]) {
                 edges_covered[v * MAX_VERTICES+ j] = true;
@@ -18,10 +20,15 @@ bool isVertexCover(int graph[MAX_VERTICES * MAX_VERTICES], int n, int cover[], i
     }
 
     // here we did optimization by 
-    for (int i = 0; i < n; i++) {
-        int* endgraph = &graph[i * MAX_VERTICES + n-1];
-        int* graphLoc = &graph[i * MAX_VERTICES + i+1];
-        bool* edgesLoc = &edges_covered[i * MAX_VERTICES + i+1];
+    int startrow = 0;
+    int i = 0;
+    n--;
+    while (i<n)
+    {
+        i++;
+        int* endgraph = &graph[startrow + n];
+        int* graphLoc = &graph[startrow + i];
+        bool* edgesLoc = &edges_covered[startrow + i];
         while (graphLoc <= endgraph)
         {
             if (*graphLoc && !*edgesLoc) {
@@ -30,6 +37,8 @@ bool isVertexCover(int graph[MAX_VERTICES * MAX_VERTICES], int n, int cover[], i
             graphLoc++;
             edgesLoc++;
         }
+        startrow += MAX_VERTICES;
+        
     }
     return true;
 }
@@ -39,16 +48,23 @@ void generateCombinations(int n, int k, int cover[], int start, int currentSize,
     if (currentSize == k) {
         if (isVertexCover(graph, n, cover, k)&& k < *minSize) {
                 *minSize = k;
-                for (int i = 0; i < k; i++) {
-                    minCover[i] = cover[i];
+                int* minCoverEnd = &minCover[k];
+                while (minCover < minCoverEnd)
+                {
+                    *minCover = *cover;
+                    minCover++;
+                    cover++;
                 }
         }
         return;
     }
 
-    for (int i = start; i < n; i++) {
+    int i = start;
+    while (i < n)
+    {
         cover[currentSize] = i;
-        generateCombinations(n, k, cover, i + 1, currentSize + 1, graph, minCover, minSize);
+        i++;
+        generateCombinations(n, k, cover, i , currentSize + 1, graph, minCover, minSize);
         if (*minSize <= k) return; // Early termination if we've found a solution of size k or smaller
     }
 }

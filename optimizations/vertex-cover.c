@@ -10,7 +10,7 @@ bool isVertexCover(int graph[MAX_VERTICES][MAX_VERTICES], int n, int cover[], in
     // For each vertex in the cover, mark all edges incident to it as covered
     for (int i = 0; i < k; i++) {
         int v = cover[i]; // The vertex we're considering
-        for (int j = 0; j < n; j++) {
+        for (int j = i+1; j < n; j++) {
             if (graph[v][j]) {
                 edges_covered[v][j] = edges_covered[j][v] = true;
             }

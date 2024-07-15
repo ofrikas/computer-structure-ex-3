@@ -38,7 +38,6 @@ bool isVertexCover(int graph[MAX_VERTICES * MAX_VERTICES], int n, int cover[], i
             edgesLoc++;
         }
         startrow += MAX_VERTICES;
-        
     }
     return true;
 }

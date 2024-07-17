@@ -1,6 +1,6 @@
 # Assignment - Homework 3 in Computer Structure
 
-In this project, I learned about cache simulation, optimization techniques, and binary patching. Through implementing a cache simulator, solving the NP-Hard minimal Vertex Cover problem, and reverse engineering a binary file, I enhanced my understanding of computer architecture, algorithm efficiency, and software security.
+In this project, I learned about cache simulation, optimization techniques, and binary patching. Through implementing a cache simulator, solving the NP-Hard minimal Vertex Cover problem, and reverse engineering a binary file, I enhanced my understanding of computer architecture, algorithm efficiency, and software security. This project utilized programming skills in C and reverse engineering tools like IDA.
 
 ### Assignment - Homework 3 in Computer Structure
 
@@ -32,7 +32,7 @@ You will find an unoptimized implementation in `vertex-cover.c`, which includes:
 
 ### 3. Patching
 
-For this section, we were given a binary file named `patchwork`. The task was to patch this binary to make it print a secret flag. We used reverse engineering tools, specifically Cutter, to accomplish this.
+For this section, we were given a binary file named `patchwork`. The task was to patch this binary to make it print a secret flag. We used reverse engineering tools, specifically IDA, to accomplish this.
 
 The detailed steps and reasoning are documented in the file `cheating_is_bad.txt`.
 
@@ -41,3 +41,5 @@ The detailed steps and reasoning are documented in the file `cheating_is_bad.txt
 ### Conclusion
 
 This project showcases our skills in cache simulation, optimization problems, and binary patching. Each section builds on the principles and techniques learned throughout the course.
+
+
